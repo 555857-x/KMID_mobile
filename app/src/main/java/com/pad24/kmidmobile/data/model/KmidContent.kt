@@ -72,3 +72,34 @@ data class Activity(
 data class LidmWork(val tag: String, val title: String, val description: String)
 
 data class Partner(val name: String, val role: String, val tone: Tone)
+
+data class OprecInfo(
+    val deadline: String,
+    val title: String,
+    val description: String,
+    val departments: List<String>,
+    val target: String,
+)
+
+data class InfoKompetisi(
+    val tag: String,
+    val title: String,
+    val description: String,
+)
+
+data class SelectionStep(
+    val stepNumber: String,
+    val dateRange: String,
+    val title: String,
+    val description: String,
+    val tag: String,
+    val isOrange: Boolean = false,
+    val dateColor: Tone = Tone.BLUE,
+)
+
+data class DivisionRequirement(
+    val divisionName: String,
+    val description: String,
+    val requirements: List<String>,
+)
+

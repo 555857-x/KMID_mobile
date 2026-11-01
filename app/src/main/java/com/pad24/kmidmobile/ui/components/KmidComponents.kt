@@ -42,6 +42,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -124,6 +125,20 @@ fun HeroBackground(modifier: Modifier = Modifier, content: @Composable BoxScope.
                 radius = size.width * 0.14f, center = right,
             )
         }
+        content()
+    }
+}
+
+/** Latar hero menggunakan backgroundmobile.png khusus untuk halaman Information & Join. */
+@Composable
+fun DrawableHeroBackground(modifier: Modifier = Modifier, content: @Composable BoxScope.() -> Unit) {
+    Box(modifier.fillMaxWidth().background(Color.White)) {
+        Image(
+            painter = painterResource(R.drawable.backgroundmobile),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.matchParentSize(),
+        )
         content()
     }
 }

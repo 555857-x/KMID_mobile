@@ -36,12 +36,14 @@ import androidx.compose.ui.res.painterResource
 import com.pad24.kmidmobile.R
 import com.pad24.kmidmobile.ui.theme.KmidColors
 
-/** Rute layar di dalam MainActivity (menu hamburger). Information menyusul. */
+/** Rute layar di dalam MainActivity (menu hamburger). */
 enum class Screen(val route: String, val label: String) {
     Beranda("beranda", "Home"),
     About("about", "About"),
     Activities("activities", "Activities"),
     Impact("impact", "Impact"),
+    Information("information", "Information"),
+    Join("join", "Join KMID"),
 }
 
 /** Isi menu hamburger: logo + tutup, kolom cari, daftar menu, tombol Join KMID oranye. */
@@ -72,7 +74,7 @@ fun KmidDrawer(
             )
             Spacer(Modifier.height(12.dp))
 
-            val items = Screen.entries.filter { it.label.contains(query, ignoreCase = true) }
+            val items = Screen.entries.filter { (it != Screen.Join) && it.label.contains(query, ignoreCase = true) }
             items.forEach { screen ->
                 NavigationDrawerItem(
                     label = { Text(screen.label, style = MaterialTheme.typography.titleSmall) },

@@ -4,16 +4,20 @@ import com.pad24.kmidmobile.data.model.Achievement
 import com.pad24.kmidmobile.data.model.Activity
 import com.pad24.kmidmobile.data.model.Advisor
 import com.pad24.kmidmobile.data.model.Agenda
+import com.pad24.kmidmobile.data.model.DivisionRequirement
 import com.pad24.kmidmobile.data.model.Faq
 import com.pad24.kmidmobile.data.model.GalleryPhoto
 import com.pad24.kmidmobile.data.model.HistoryItem
 import com.pad24.kmidmobile.data.model.HomeProgram
+import com.pad24.kmidmobile.data.model.InfoKompetisi
 import com.pad24.kmidmobile.data.model.LidmWork
 import com.pad24.kmidmobile.data.model.Member
 import com.pad24.kmidmobile.data.model.Mission
+import com.pad24.kmidmobile.data.model.OprecInfo
 import com.pad24.kmidmobile.data.model.Partner
 import com.pad24.kmidmobile.data.model.Pillar
 import com.pad24.kmidmobile.data.model.Program
+import com.pad24.kmidmobile.data.model.SelectionStep
 import com.pad24.kmidmobile.data.model.Stat
 import com.pad24.kmidmobile.data.model.Tone
 
@@ -251,4 +255,142 @@ object SampleContent {
         Partner("GDGOC UGM", "Student Developer", Tone.BLUE),
         Partner("KOMATIK UGM", "Learning Partner", Tone.DARK),
     )
+
+    // ---------- INFORMATION ----------
+    const val INFORMATION_SUBTITLE =
+        "Menghadirkan solusi teknologi berdampak dan memborong prestasi nasional untuk almamater dan Indonesia."
+
+    val oprecInfo = OprecInfo(
+        deadline = "28 Feb 2025",
+        title = "Open Recruitment Pengurus KMID Periode 2025/2026",
+        description = "Bergabunglah bersama keluarga inovasi digital UGM untuk mengelola kompetisi, workshop teknologi, dan jejaring industri.",
+        departments = listOf("Media Creative", "Humas & Publikasi", "IPDP", "ITDP"),
+        target = "UGM Active Students",
+    )
+
+    val pengumumanPoints = listOf(
+        "Transparansi Seleksi Kontingen",
+        "Bimbingan Mentor Eksklusif",
+        "Akses Fasilitas Lab & Cloud",
+    )
+
+    val nationalCompetitions = listOf(
+        InfoKompetisi(
+            tag = "LIDM 2026",
+            title = "LIDM Puspresnas 2025",
+            description = "Divisi Inovasi Pembelajaran Digital & Microlearning. Batas pengumpulan proposal internal UGM 15 Maret.",
+        ),
+        InfoKompetisi(
+            tag = "LIDM 2026",
+            title = "LIDM Puspresnas 2025",
+            description = "Divisi Inovasi Pembelajaran Digital & Microlearning. Batas pengumpulan proposal internal UGM 15 Maret.",
+        ),
+    )
+
+    // ---------- JOIN ----------
+    val joinStats = listOf(
+        Stat("9", "Divisi Peminatan", Tone.BLUE),
+        Stat("100%", "Mentoring", Tone.ORANGE),
+        Stat("UGM", "Mahasiswa D4 & S1", Tone.BLUE),
+    )
+
+    val timelineSteps = listOf(
+        SelectionStep(
+            stepNumber = "01",
+            dateRange = "1 – 15 MARET 2025",
+            title = "Pendaftaran & Berkas",
+            description = "Pengisian formulir identitas diri, pengunggahan CV kreatif, serta dokumen portofolio karya awal melalui tautan resmi.",
+            tag = "Tahap Awal Wajib",
+            isOrange = true,
+            dateColor = Tone.ORANGE,
+        ),
+        SelectionStep(
+            stepNumber = "02",
+            dateRange = "18 – 24 MARET 2025",
+            title = "Sesi Wawancara",
+            description = "Diskusi mendalam bersama BPH seputar motivasi, komitmen waktu, serta peninjauan teknis hasil pengerjaan case study.",
+            tag = "Wawancara Daring / Luring",
+            isOrange = false,
+            dateColor = Tone.BLUE,
+        ),
+        SelectionStep(
+            stepNumber = "03",
+            dateRange = "5 APRIL 2025",
+            title = "Pengumuman Kelulusan",
+            description = "Pengumuman resmi staf baru KMID UGM 2025 dilanjutkan dengan First Gathering & Onboarding ekosistem kerja inovatif.",
+            tag = "Pengumuman Kelulusan",
+            isOrange = false,
+            dateColor = Tone.GREEN,
+        ),
+    )
+
+    val divisionRequirements = listOf(
+        DivisionRequirement(
+            divisionName = "Media Creative",
+            description = "Menciptakan pengalaman desain yang intuitif, estetis, dan informatif.",
+            requirements = listOf(
+                "Mahasiswa aktif Universitas Gadjah Mada jenjang D4 maupun S1 minimal semester 2 hingga semester 6.",
+                "Menguasai tools desain terutama Figma.",
+                "Memahami metodologi Design Thinking, serta perancangan Informasi pada desain.",
+                "Mampu bekerja sama antar tim maupun antar divisi.",
+                "Wajib melampirkan portofolio (Behance, Dribbble, Google Drive, atau Figma file link).",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "Humas & Publikasi",
+            description = "Mengelola komunikasi publik, media sosial, dan hubungan antar lembaga UGM.",
+            requirements = listOf(
+                "Mahasiswa aktif Universitas Gadjah Mada jenjang D4 maupun S1 minimal semester 2 hingga semester 6.",
+                "Memiliki kemampuan copywriting dan komunikasi publik yang baik.",
+                "Kreatif dalam merancang konten media sosial (Instagram, LinkedIn, TikTok).",
+                "Mampu berkoordinasi dengan pihak internal dan eksternal kampus.",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "Perlombaan",
+            description = "Mengoordinasikan kontingen dan delegasi kompetisi nasional Puspresnas.",
+            requirements = listOf(
+                "Mahasiswa aktif UGM D4/S1 semester 2 hingga 6.",
+                "Memahami alur dan regulasi kompetisi nasional seperti LIDM dan Gemastik.",
+                "Memiliki kemampuan manajemen proyek dan koordinasi tim yang kuat.",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "IPDP",
+            description = "Divisi Inovasi Pembelajaran Digital (IPDP) Puspresnas.",
+            requirements = listOf(
+                "Mahasiswa aktif UGM D4/S1 semester 2 hingga 6.",
+                "Tertarik pada riset media pembelajaran berbasis teknologi.",
+                "Mampu menyusun proposal inovasi dan prototipe produk edukasi digital.",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "ITDP",
+            description = "Divisi Inovasi Teknologi Digital & Programming.",
+            requirements = listOf(
+                "Mahasiswa aktif UGM D4/S1 semester 2 hingga 6.",
+                "Menguasai dasar pemrograman web, mobile, atau cloud architecture.",
+                "Terbiasa menggunakan Git dan siap berkolaborasi dalam pengkodean tim.",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "Poster Digital",
+            description = "Perancangan poster edukasi interaktif dan media komunikasi visual.",
+            requirements = listOf(
+                "Mahasiswa aktif UGM D4/S1 semester 2 hingga 6.",
+                "Kreatif dalam ilustrasi visual dan tata letak poster ilmiah/edukasi.",
+                "Memahami prinsip keterbacaan dan estetika komunikasi gambar.",
+            ),
+        ),
+        DivisionRequirement(
+            divisionName = "MicroTeaching Digital",
+            description = "Pengembangan media microteaching interaktif berbasis pedagogi modern.",
+            requirements = listOf(
+                "Mahasiswa aktif UGM D4/S1 semester 2 hingga 6.",
+                "Tertarik pada metode pengajaran digital dan pembuatan video pembelajaran.",
+                "Memiliki keahlian public speaking dan penyusunan modul materi.",
+            ),
+        ),
+    )
 }
+

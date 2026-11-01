@@ -1,7 +1,6 @@
 package com.pad24.kmidmobile
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +13,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -26,11 +24,13 @@ import com.pad24.kmidmobile.ui.screens.AboutScreen
 import com.pad24.kmidmobile.ui.screens.ActivitiesScreen
 import com.pad24.kmidmobile.ui.screens.BerandaScreen
 import com.pad24.kmidmobile.ui.screens.ImpactScreen
+import com.pad24.kmidmobile.ui.screens.InformationScreen
+import com.pad24.kmidmobile.ui.screens.JoinScreen
 import com.pad24.kmidmobile.ui.theme.KmidTheme
 import kotlinx.coroutines.launch
 
 /**
- * MainActivity: menu hamburger berisi Beranda, About, Activities, Impact (Information menyusul).
+ * MainActivity: menu hamburger berisi Beranda, About, Activities, Impact, Information, Join KMID.
  * Tiap menu adalah layar Compose di dalam satu NavHost.
  */
 class MainActivity : ComponentActivity() {
@@ -46,7 +46,6 @@ fun KmidApp() {
     val nav = rememberNavController()
     val drawer = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    val context = LocalContext.current
     val backStack by nav.currentBackStackEntryAsState()
     val current = backStack?.destination?.route
 
@@ -60,10 +59,9 @@ fun KmidApp() {
         }
     }
 
-    // Sementara: JoinKmidActivity belum dibuat, jadi tampilkan Toast.
     val onJoin: () -> Unit = {
         scope.launch { drawer.close() }
-        Toast.makeText(context, "Join KMID: login dengan email UGM (segera hadir)", Toast.LENGTH_SHORT).show()
+        go(Screen.Join)
     }
 
     ModalNavigationDrawer(
@@ -88,6 +86,8 @@ fun KmidApp() {
                 composable(Screen.About.route) { AboutScreen(onNavigate = ::go) }
                 composable(Screen.Activities.route) { ActivitiesScreen(onNavigate = ::go) }
                 composable(Screen.Impact.route) { ImpactScreen(onNavigate = ::go) }
+                composable(Screen.Information.route) { InformationScreen(onNavigate = ::go, onJoinClick = onJoin) }
+                composable(Screen.Join.route) { JoinScreen(onNavigate = ::go) }
             }
         }
     }
