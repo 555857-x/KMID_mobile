@@ -26,11 +26,12 @@ import com.pad24.kmidmobile.ui.screens.BerandaScreen
 import com.pad24.kmidmobile.ui.screens.ImpactScreen
 import com.pad24.kmidmobile.ui.screens.InformationScreen
 import com.pad24.kmidmobile.ui.screens.JoinScreen
+import com.pad24.kmidmobile.ui.screens.PortalPendaftarScreen
 import com.pad24.kmidmobile.ui.theme.KmidTheme
 import kotlinx.coroutines.launch
 
 /**
- * MainActivity: menu hamburger berisi Beranda, About, Activities, Impact, Information, Join KMID.
+ * MainActivity: menu hamburger berisi Beranda, About, Activities, Impact, Information, Join KMID, Portal Pendaftar.
  * Tiap menu adalah layar Compose di dalam satu NavHost.
  */
 class MainActivity : ComponentActivity() {
@@ -61,7 +62,7 @@ fun KmidApp() {
 
     val onJoin: () -> Unit = {
         scope.launch { drawer.close() }
-        go(Screen.Join)
+        go(Screen.PortalPendaftar)
     }
 
     ModalNavigationDrawer(
@@ -88,6 +89,7 @@ fun KmidApp() {
                 composable(Screen.Impact.route) { ImpactScreen(onNavigate = ::go) }
                 composable(Screen.Information.route) { InformationScreen(onNavigate = ::go, onJoinClick = onJoin) }
                 composable(Screen.Join.route) { JoinScreen(onNavigate = ::go) }
+                composable(Screen.PortalPendaftar.route) { PortalPendaftarScreen(onNavigate = ::go) }
             }
         }
     }

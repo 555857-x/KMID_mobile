@@ -103,3 +103,9 @@ data class DivisionRequirement(
     val requirements: List<String>,
 )
 
+data class InterviewSlot(
+    val timeRange: String,
+    val duration: String = "15 menit",
+)
+
+

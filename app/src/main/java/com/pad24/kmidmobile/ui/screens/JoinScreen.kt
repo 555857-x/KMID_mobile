@@ -1,6 +1,5 @@
 package com.pad24.kmidmobile.ui.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -34,7 +33,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -59,13 +57,12 @@ import com.pad24.kmidmobile.ui.theme.KmidColors
  */
 @Composable
 fun JoinScreen(onNavigate: (Screen) -> Unit) {
-    val context = LocalContext.current
     var selectedDivisionName by remember { mutableStateOf("Media Creative") }
     val divisions = SampleContent.divisionRequirements
     val currentDivision = divisions.find { it.divisionName == selectedDivisionName } ?: divisions.first()
 
     val onApplyClick = {
-        Toast.makeText(context, "Membuka formulir pendaftaran KMID...", Toast.LENGTH_SHORT).show()
+        onNavigate(Screen.PortalPendaftar)
     }
 
     LazyColumn {

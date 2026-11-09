@@ -10,6 +10,7 @@ import com.pad24.kmidmobile.data.model.GalleryPhoto
 import com.pad24.kmidmobile.data.model.HistoryItem
 import com.pad24.kmidmobile.data.model.HomeProgram
 import com.pad24.kmidmobile.data.model.InfoKompetisi
+import com.pad24.kmidmobile.data.model.InterviewSlot
 import com.pad24.kmidmobile.data.model.LidmWork
 import com.pad24.kmidmobile.data.model.Member
 import com.pad24.kmidmobile.data.model.Mission
@@ -392,5 +393,27 @@ object SampleContent {
             ),
         ),
     )
+
+    // ---------- PORTAL PENDAFTAR ----------
+    val oprecDivisions = listOf(
+        "Perlombaan",
+        "Humas & Publikasi",
+        "Media Creative",
+        "IPDP",
+        "ITDP",
+        "Poster Digital Pendidikan",
+        "MicroTeaching Digital Pendidikan",
+        "Video Digital Pendidikan",
+    )
+
+    val interviewSlots = listOf(
+        InterviewSlot("10:00–10:15"),
+        InterviewSlot("10:15–10:30"),
+        InterviewSlot("10:30–10:45"),
+        InterviewSlot("10:45–11:00"),
+        InterviewSlot("11:00–11:15"),
+        InterviewSlot("11:15–11:30"),
+    )
 }
+
 

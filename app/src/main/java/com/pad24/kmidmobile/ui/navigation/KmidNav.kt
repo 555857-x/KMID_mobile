@@ -44,6 +44,7 @@ enum class Screen(val route: String, val label: String) {
     Impact("impact", "Impact"),
     Information("information", "Information"),
     Join("join", "Join KMID"),
+    PortalPendaftar("portal_pendaftar", "Portal Pendaftar"),
 }
 
 /** Isi menu hamburger: logo + tutup, kolom cari, daftar menu, tombol Join KMID oranye. */
